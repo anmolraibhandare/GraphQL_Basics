@@ -9,6 +9,7 @@ It is a frontend library that makes it easier to talk to AWS backend resources. 
 - It also consists of Client Library
 - Once you have created your services from CLI, you can use one of the client libraries to interact with services that were created by CLI.
 
+```
 What services are supported:
 - Database
 - API
@@ -18,8 +19,8 @@ What services are supported:
 - Hosting
 - Storage via S3
 - Chatbots
-
-**Authentication**
+```
+### Authentication
 For authentication, we need to specify authentication rules on our graphQL schema and we are going to need to add authorization rules for interacting with our graphQL API in general.
 To do this, we need to steuo an authentication service
 By using Ampplify, we can setup authentication using API category which under the hood utilized Amazon Cognito
