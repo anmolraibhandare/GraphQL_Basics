@@ -51,8 +51,8 @@ By using Ampplify, we can setup authentication using API category which under th
 4. Flexible data query and less code to maintain
 
 ### GraphQL query
-<!-- ![](Images/graphqlquery.jpeg) -->
-<img src="https://github.com/anmolraibhandare/GraphQL_Basics/blob/main/Images/graphqlquery.jpeg" width="700">
+<!-- ![](Images/graphqlquery.png) -->
+<img src="https://github.com/anmolraibhandare/GraphQL_Basics/blob/main/Images/graphqlquery.png" width="500">
 In this example, we have a graphQL query. In this query we are asking from graphQL server to give this particular user's name, email and posts that they have created. When you send this request, you get a request in JSON response. The JSON attributes is exactly matching to what the user has requested. The post is an array of objects. Each object contains title and body. 
 
 If it was REST, we may have to get the user's name, email and ID first using one HTTP call to the server and then we may have to send the user's ID to a diff API endpoint to fetch all the post of that users. So it could have couple of request in order to formulate this type of data object.
