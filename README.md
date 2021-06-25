@@ -8,6 +8,7 @@ It is a frontend library that makes it easier to talk to AWS backend resources. 
 - Create and configure AWS services directly from your front end environment or from your terminal.
 - It also consists of Client Library
 - Once you have created your services from CLI, you can use one of the client libraries to interact with services that were created by CLI.
+- The CLI can automatically create a fully functional GraphQL API including datasources, resolvers, & additional schema for mutations, subscriptions, & queries. We can also update & delete the schema, datasources, & resolvers in our API directly from our local environment.
 
 ```
 What services are supported:
@@ -35,11 +36,12 @@ By using Ampplify, we can setup authentication using API category which under th
 
 ***AWS App Sync Service***
 - It is a management API Service
-- It utilizes graphQL as its implementation
+- It utilizes graphQL as its implementation (AWS managed GraphQL service)
 - From CLI, you can create AWS App Sync GraphQL APISs
 - Once created, you can coonfigure or update or manage your API
 - Base scheme can be evolved
 - Using Amplify client library, you can then interact with the AppSync API, then you can query against it, send mutation, register or subscribe
+- Amplify handles the basics of writing the boiler plate VTL code for your resolvers
 
 ### GraphQL?
 `GraphQL` is a data language that was developed to enable apps to fetch data from APIs. It has a declarative, self-documenting style. In a GraphQL operation, the client specifies how to structure the data when it is returned by the server. This makes it possible for the client to query only for the data it needs, in the format that it needs it in.
@@ -72,6 +74,18 @@ Watching over changes in Real time. For example, we do a mutation - create a new
 ### Graph Transform 
 - It is a series of directives or library of directives that allow you to decorate a base GraphQL type to add additional functionality.
 - Provides an abstraction that helps you quickly create backends for applications on AWS.
+- We can add powerful features such as Elasticsearch, user authorization, & data relations using the Amplify GraphQL Transform library directly from the CLI in our local environment.
+- Amplify GraphQL Transform is a library for simplifying the process of developing, deploying, and maintaining GraphQL APIs. With it you define your API using the GraphQL Schema Definition Language (SDL) and then pass it to the library where it is transformed and implements your API’s data model in AWS AppSync.
+- While the library comes with transformers to do most of the work you would need to build a typical API, you can also even write your own GraphQL Transformer.
+- For example, if we wanted to scaffold out a GraphQL API that created a data-source, resolvers, schema, & then streamed all data to Elasticsearch we could create the following type & push it up using the AWS Amplify CLI:
+```
+type Pet @model @searchable {
+  id: ID!
+  name: String!
+  description: String
+}
+```
+In the above schema, the annotations `@model` & `@searchable` will create the datasources & all of the resources automatically for us.
 
 **Types** \
 `@version`
