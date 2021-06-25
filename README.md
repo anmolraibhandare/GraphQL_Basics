@@ -23,8 +23,8 @@ What services are supported:
 ```
 ### Authentication
 For authentication, we need to specify authentication rules on our graphQL schema and we are going to need to add authorization rules for interacting with our graphQL API in general.
-To do this, we need to steuo an authentication service
-By using Ampplify, we can setup authentication using API category which under the hood utilized Amazon Cognito
+To do this, we need to setup an authentication service
+By using Amplify, we can setup authentication using API category which under the hood utilizes Amazon Cognito
 
 ***Amazon Cognito Service***
 - It is a user management service
@@ -34,6 +34,9 @@ By using Ampplify, we can setup authentication using API category which under th
 - It consists of pre configured components for applications
 - Once you create this service, you can use these components to get running with real user interfacr
 
+### API & Storage
+Store user data in DynamoDB and S3. Amplify also stores all of the backend configuration information in your project folder so you can know exactly what is going on and what amplify is doing in your AWS account for you. Amplify handles the basics of writing the boiler plate VTL code for your resolvers
+
 ***AWS App Sync Service***
 - It is a management API Service
 - It utilizes graphQL as its implementation (AWS managed GraphQL service)
@@ -41,7 +44,7 @@ By using Ampplify, we can setup authentication using API category which under th
 - Once created, you can coonfigure or update or manage your API
 - Base scheme can be evolved
 - Using Amplify client library, you can then interact with the AppSync API, then you can query against it, send mutation, register or subscribe
-- Amplify handles the basics of writing the boiler plate VTL code for your resolvers
+
 
 ### GraphQL?
 `GraphQL` is a data language that was developed to enable apps to fetch data from APIs. It has a declarative, self-documenting style. In a GraphQL operation, the client specifies how to structure the data when it is returned by the server. This makes it possible for the client to query only for the data it needs, in the format that it needs it in.
